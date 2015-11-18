@@ -1,4 +1,5 @@
 class NotesController < ApplicationController
+  # We only need these two functions
   before_action :set_book, only: [:create, :destroy]
 
   def create
