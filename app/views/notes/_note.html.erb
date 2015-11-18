@@ -1,0 +1,13 @@
+<div class="note">
+  <div>
+    <!-- 大多都是將 <DIV> 定義為一個區段或是片段，換句話說，就是一個較大較完整的段落。
+    而 <SPAN> 則是應用在較小的範圍裡面。 -->
+    <!-- time_ago_in_words is a rails helper -->
+    <%= content_tag :span, "#{note.title} (#{time_ago_in_words(note.created_at)} ago)",
+    class: "note-title" %>
+    <!-- the note path is under the @book -->
+    <%= link_to "Delete Note", [@book, note], method: :delete %>
+  </div>
+  <!-- Formats new lines as <br></br> -->
+  <div><%= simple_format(note.note) %></div>
+</div>
