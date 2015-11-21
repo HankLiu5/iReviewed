@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20151118041629) do
 
   create_table "reviewers", force: :cascade do |t|
     t.string   "name"
-    t.string   "password_digest"
+    t.string   "password_digest" # For bcrypt gem. No need the "password" column.
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
