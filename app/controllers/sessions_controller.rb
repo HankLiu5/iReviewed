@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  # Prevent from being in a circle.
   skip_before_action :ensure_login, only: [:new, :create]
   # We can think of new action as login page and destroy as logout page.
   # Need new and create actions to create a session.

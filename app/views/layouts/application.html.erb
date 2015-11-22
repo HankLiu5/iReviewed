@@ -8,7 +8,14 @@
 </head>
 <body>
 
-<!-- flash keys => :notice, :alert -->
+<% if logged_in? %>
+  <div style='float: right;'>
+    Logged in as <%= current_user.name %> |
+    <%= link_to "Logout", logout_path, method: :delete %>
+  </div>
+<% end %>
+
+<!-- flash keys :notice, :alert -->
 <% flash.each do |key, value| %>
   <p id='<%= key %>'><%= value %></p>
 <% end %>
